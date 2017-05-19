@@ -1,0 +1,64 @@
+<lasso-page package-path="./browser.json"/>
+
+<layout-use("src/layouts/base/template.marko") page=data.page>
+
+<layout-put into="styles">
+  <!-- PUT STYLES HERE -->
+</layout-put>
+
+<layout-put into="body">
+  <script marko-init>
+     var help = require("src/helpers/helper");
+  </script>
+
+  <div class="container-fluid">
+
+    <!-- ASYNCHRONOUS -->
+    <await(objectData from data.objectData) client-reorder=true>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <h1>${data.page.name}</h1>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </await>
+
+    <!-- SYNCHRONOUS  -->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+        ${data.page.display}
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <!-- SYNCHRONOUS  -->
+    <div class="row" style="margin-top:50px;">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+        Helper that reverses text >> ${help.reverse('I am backwards')}
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <div class="row" style="margin-top:50px;">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+        <!-- interactive form component -->
+        <click-count greetingName="Dude"/>
+        <!-- /interactive form component -->
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+  </div>
+
+</layout-put>
+
+<layout-put into="javascripts">
+  <!-- PUT JAVASCRIPT HERE -->
+</layout-put>
+
+
+</layout-use>

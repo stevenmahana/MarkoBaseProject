@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- BEGIN HEAD -->
+<head>
+  <meta charset="utf-8" />
+  <title>${data.page.title}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content=(data.page.title) name="description" />
+  <meta content="Steven Mahana" name="author" />
+
+  <!-- GLOBAL MANDATORY STYLES -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- PAGE LEVEL STYLES -->
+  <layout-placeholder name="styles"/>
+
+  <lasso-head/>
+</head>
+<!-- END HEAD -->
+
+<body>
+
+<!-- BEGIN HEADER -->
+<include ("src/layouts/elements/header.marko") />
+<!-- END HEADER -->
+
+
+<!-- BEGIN MAIN CONTAINER -->
+<div class="page-container">
+
+    <!-- Page Content -->
+    <layout-placeholder name="body" />
+
+</div>
+<!-- END MAIN CONTAINER -->
+
+<!-- BEGIN FOOTER -->
+<include ("src/layouts/elements/footer.marko") />
+<!-- END FOOTER -->
+
+<!-- GLOBAL MANDATORY JAVASCRIPTS -->
+<script src="/assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- PAGE LEVEL Javascript -->
+<layout-placeholder name="javascripts"/>
+
+<!-- MARKO -->
+<lasso-body/>
+<await-reorderer/>
+<init-widgets/>
+<browser-refresh/>
+
+</body>
+
+</html>

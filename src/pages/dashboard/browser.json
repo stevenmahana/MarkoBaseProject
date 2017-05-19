@@ -1,0 +1,6 @@
+{
+  "dependencies": [
+    "require: src/components/click-count",
+    "./style.css"
+  ]
+}

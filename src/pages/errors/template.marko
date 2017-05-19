@@ -1,0 +1,32 @@
+<lasso-page package-path="./browser.json"/>
+
+<layout-use("src/layouts/base/template.marko") page=data.page>
+
+<layout-put into="styles">
+  <!-- PUT STYLES HERE -->
+</layout-put>
+
+<layout-put into="body">
+
+  <div class="container-fluid">
+
+    <!-- SYNCHRONOUS  -->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+          <h2>Page not found</h2>
+          <div>The page you are looking for doesn't exist or has been moved.</div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+  </div>
+
+</layout-put>
+
+<layout-put into="javascripts">
+  <!-- PUT JAVASCRIPT HERE -->
+</layout-put>
+
+
+</layout-use>
